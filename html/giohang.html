@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triệu Minh Musical Instruments</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Kết nối file CSS -->
+    <link rel="stylesheet" href="../css/Assignment.css">
+    <style>
+        body {
+            background-color: #292929; /* Màu nền sáng */
+            font-family: Arial, sans-serif; /* Font chữ dễ đọc */
+        }
+
+        .navbar {
+            background-color: #ce3f3f !important; 
+        }
+
+        .navbar-nav .nav-link {
+            color: rgb(255, 255, 255) !important; /* Màu chữ trắng */
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            font-size: 14px; /* Đặt kích thước chữ mong muốn, ví dụ: 14px */
+        }
+        
+        .mt-5 {
+            font-size: 14px;
+            color: #ffffff; /* Màu chữ nhạt */
+        }
+
+        .table {
+            color: #ffffff; /* Màu chữ nhạt */
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".nav-link.trangchu").click(function(event){
+                    event.preventDefault(); // Ngăn chặn hành động mặc định của nút
+                    // Chuyển hướng URL về trang chủ và loại bỏ mọi thao tác đang thực hiện trên trang web
+                    window.location.replace("index.html");
+            });
+            $(document).ready(function(){
+                // Biến đếm số lượng sản phẩm trong giỏ hàng
+                var cartCount = 0;
+
+                // Xử lý khi click vào nút "Chi tiết" của sản phẩm
+                $(".sanPham .btn-primary").click(function(event){
+                    event.preventDefault(); // Ngăn chặn hành động mặc định của nút
+                    var productName = $(this).closest(".sanPham").find(".ten").text(); // Lấy tên sản phẩm
+                    // Thêm sản phẩm vào giỏ hàng
+                    addToCart(productName);
+                });
+
+                // Hàm thêm sản phẩm vào giỏ hàng
+                function addToCart(productName){
+                    // Tăng biến đếm số lượng sản phẩm
+                    cartCount++;
+                    // Cập nhật số lượng sản phẩm trong giỏ hàng trên nút "Giỏ hàng"
+                    updateCartCount();
+                    // Hiển thị thông báo
+                    alert("Đã thêm " + productName + " vào giỏ hàng!");
+                }
+
+                // Hàm cập nhật số lượng sản phẩm trong giỏ hàng
+                function updateCartCount(){
+                    // Cập nhật số lượng sản phẩm hiển thị trên nút "Giỏ hàng"
+                    $("#cartLink").text("Giỏ hàng (" + cartCount + ")");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.png" height="100px" width="100px" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/index.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            MENU
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item electric" href="#">Guitar Điện</a>
+                            <a class="dropdown-item classic" href="#">Guitar Classic</a>
+                            <a class="dropdown-item acoustic" href="#">Guitar Acoustic</a>
+                            <a class="dropdown-item organ" href="#">Organ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/DangNhap.html">ĐĂNG NHẬP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/Dangky.html">ĐĂNG KÝ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/about.html">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/giohang.html" id="cartLink">GIỎ HÀNG (0)</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="mb-4">Giỏ hàng</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Giá</th>
+                </tr>
+            </thead>
+            <tbody id="cartItems">
+                <!-- Dữ liệu sản phẩm trong giỏ hàng sẽ được thêm ở đây bằng JavaScript -->
+            </tbody>
+        </table>
+        <button id="checkoutBtn" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">Thanh toán</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Chọn phương thức thanh toán</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><a href="#">Tiền mặt</a></li>
+                        <li><a href="#">Chuyển khoản</a></li>
+                        <li><a href="#">Paypal</a></li>
+                        <li><a href="#">ATM</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

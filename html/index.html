@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triệu Minh Musical Instruments</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Kết nối file CSS -->
+    <link rel="stylesheet" href="../css/Assignment.css">
+    <style>
+        body {
+            background-color: #292929; /* Màu nền sáng */
+            font-family: Arial, sans-serif; /* Font chữ dễ đọc */
+        }
+
+        .navbar {
+            background-color: #ce3f3f !important; 
+        }
+
+        .navbar-nav .nav-link {
+            color: rgb(255, 255, 255) !important; /* Màu chữ trắng */
+            font-weight: bold;
+        }
+
+        .sanPham {
+            background-color: #2b2b2b; /* Màu nền cho sản phẩm */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng shadow */
+        }
+
+        .sanPham:hover {
+            transform: translateY(-5px); /* Hiệu ứng khi hover */
+        }
+
+        .ten {
+            font-weight: bold;
+            font-size: 18px;
+            color: #ffffff !important; /* Màu chữ đậm */
+        }
+
+        .b1 {
+            font-size: 14px;
+            color: #b8b8b8; /* Màu chữ nhạt */
+        }
+
+        .gia {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #cc4b4b !important; /* Màu chữ nổi bật */
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+            width: 100%;
+            background-color: rgb(235, 81, 81); /* Màu nền cho nút */
+            border-color: #000000; /* Màu viền cho nút */
+        }
+
+        .btn-primary:hover {
+            background-color: #6d0000; /* Màu nền khi hover */
+            border-color: #000000; /* Màu viền khi hover */
+        }
+
+        .img-fluid {
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #ce3f3f; /* Màu nền chân trang */
+            color: #fff; /* Màu chữ chân trang */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .carousel-inner {
+            margin: auto;
+            max-width: 1080px; /* Đặt kích thước tối đa cho chiều rộng của slider */
+            max-height: 720px; /* Đặt kích thước tối đa cho chiều cao của slider */
+            width: auto; /* Tự động điều chỉnh chiều rộng */
+            height: auto; /* Tự động điều chỉnh chiều cao */
+        }
+
+        .carousel-control-prev {
+            left: 300px; /* Điều chỉnh vị trí sang trái */
+        }
+
+        .carousel-control-next {
+            right: 300px; /* Điều chỉnh vị trí sang phải */
+        }
+
+        #carouselExampleSlidesOnly {
+        margin-top: 30px; /* Giãn cách 20px phía trên */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 14px; /* Đặt kích thước chữ mong muốn, ví dụ: 14px */
+        }
+
+        .product-details {
+            color: #ffffff; /* Màu chữ trắng */
+        }
+
+        .product-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .product-description {
+            font-size: 14px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .original-price {
+            color: #555; /* Màu chữ xám */
+            text-decoration: line-through; /* Gạch ngang */
+        }
+
+        .discounted-price {
+            color: #cc4b4b; /* Màu đỏ */
+            font-weight: bold; /* Chữ in đậm */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.png" height="100px" width="100px" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/index.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            MENU
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item electric" href="#">Guitar Điện</a>
+                            <a class="dropdown-item classic" href="#">Guitar Classic</a>
+                            <a class="dropdown-item acoustic" href="#">Guitar Acoustic</a>
+                            <a class="dropdown-item organ" href="#">Organ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/DangNhap.html">ĐĂNG NHẬP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/Dangky.html">ĐĂNG KÝ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/about.html">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/giohang.html" id="cartLink">GIỎ HÀNG (0)</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/banner 1.jpg" class="d-block w-100 h-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner 2.jpg" class="d-block w-100 h-auto" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Acoustic Kapok D-118AC</div>
+                    <img src="../img/acoustic 1.jpg" class="img-fluid">
+                    <b class="b1">Kapok D-118AC được thiết kế thon gọn với nhiều tính năng mới, phù hợp cho người mới bắt đầu chơi Guitar</b>
+                    <div class="gia">
+                        <del class="original-price">2.720.000</del> 
+                        <span class="discounted-price">2.100.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/acoustic 1.jpg">Chi tiết</a>
+
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Acoustic Taylor Academy A12E</div>
+                    <img src="../img/acoustic 2.jpg" class="img-fluid">
+                    <b class="b1">Chiếc Grand Concert acoustic tuyệt vời từ seri Academy của Taylor</b>
+                    <div class="gia">
+                        <del class="original-price">22.160.000</del> 
+                        <span class="discounted-price">20.170.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/acoustic 2.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Guitar Điện Squier Fsr Sonic Strat Hss</div>
+                    <img src="../img/điện 1.jpg" class="img-fluid">
+                    <b class="b1">Cây đàn Gutar dáng Strat® này có kiểu dáng cần đàn “C”, thân đàn mỏng nhẹ mang lại sự thoải mái khi chơi</b>
+                    <div class="gia">
+                        <del class="original-price">6.710.000</del> 
+                        <span class="discounted-price">6.110.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/điện 1.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Organ Yamaha PSR E453</div>
+                    <img src="../img/organ 1.jpg" class="img-fluid">
+                    <b class="b1">758 tiếng chất lượng cao bao gồm Sweet! Voice, Cool! Voice cới 48 âm polyphony  Loa âm trầm công suất 6W + 6W  Nút tùy chỉnh Real-Time Control</b>
+                    <div class="gia">
+                        <del></del> HẾT HÀNG
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/organ 1.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Guitar Classic Cordoba C1M-CE</div>
+                    <img src="../img/classic 3.jpg" class="img-fluid">
+                    <b class="b1">Đàn guitar Cordoba C1M-CE là dòng Classical có thiết kế dáng khuyết cùng với âm thanh trầm ấm tốt đúng chuẩn cổ điển, và có màu sắc tươi sáng.</b>
+                    <div class="gia">
+                        <del class="original-price">7.940.000</del> 
+                        <span class="discounted-price">6.570.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/classic 1.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Guitar Classic Takamine GC3CE</div>
+                    <img src="../img/classic 2.jpg" class="img-fluid">
+                    <b class="b1">Đàn guitar Takamine GC3CE-NAT là một cây guitar cổ điển được xây dựng vững chắc với mặt top, màu bóng hoàn thiện, âm thanh dây nylon tuyệt vời đúng với sự mong đợi từ người chơi guitar cổ điển</b>
+                    <div class="gia">
+                        <del class="original-price"></del> 
+                        <span class="discounted-price">9.650.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/classic 2.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Guitar Acoustic Tanglewood TWBB SFCE</div>
+                    <img src="../img/acoustic 3.jpg" class="img-fluid">
+                    <b class="b1">Tanglewood TWBB SFCE là mẫu đàn guitar acoustic dành cho người chơi, có thiết kế đẹp, âm thanh hay & giá thành canh tranh. Đàn có kiểu dáng Super Folk Cutaway (dáng A khuyết góc) nhìn khá sang trọng và hiện đại</b>
+                    <div class="gia">
+                        <del class="original-price"></del> 
+                        <span class="discounted-price">6.240.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/acoustic 3.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Guitar Classic Cordoba 55FCE Negra - Ziricote W/C</div>
+                    <img src="../img/classic 1.jpg" class="img-fluid">
+                    <b class="b1">55FCE Negra bổ sung thêm lớp exotic ziricote ở mặt sau và hai bên cho chiếc 55FCE sẵn sàng trên sân khấu. Thân đàn mỏng, chống feedback của 55FCE Negra được làm thủ công, làm cho cây đàn guitar sản xuất tại Tây Ban Nha này trở thành một công cụ thiết yếu trong kho vũ khí của các nhạc sĩ biểu diễn.</b>
+                    <div class="gia">
+                        <del class="original-price">49.350.000</del> 
+                        <span class="discounted-price">45.900.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/classic 1.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Organ Casio CDP-S360</div>
+                    <img src="../img/organ 2.jpg" class="img-fluid">
+                    <b class="b1">CDP-S360 mẫu đàn mới ra mắt của thương hiệu Casio trong năm 2021, cây đàn thể hiện bản thân với những âm sắc và nhịp điệu phù hợp với mọi phong cách âm nhạc.</b>
+                    <div class="gia">
+                        <del class="original-price">18.700.000</del> 
+                        <span class="discounted-price">15.900.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/organ 2.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Organ Roland BK-3</div>
+                    <img src="../img/organ 3.png" class="img-fluid">
+                    <b class="b1">Hoàn hảo cho giải trí cá nhân và gia đình, BK3 Backing Keyboard mang đến một cấp độ mới về biểu diễn với các thiết bị điện tử tự động. Với một loạt các tiếng và điệu chất lượng, tính năng phát lại bài hát thông qua bộ nhớ USB, loa tích hợp, và nhiều hơn nữa, cây keyboard nhỏ gọn này đặt sức mạnh của một bộ tổng hợp đầy đủ trong ngón tay của bạn. </b>
+                    <div class="gia">
+                        <del class="original-price"></del> 
+                        <span class="discounted-price">15.650.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/organ 3.png">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Guitar Điện Fender AM Ultra Strat Rosewood HSS UltraBurst</div>
+                    <img src="../img/điện 2.jpg" class="img-fluid">
+                    <b class="b1">Fender American Ultra là dòng tốt nhất trong các dòng thuộc series của Fender. Có thể nói, Series American Ultra chỉ dưới Fender Custom Shop. Được xuất hiện vào lần đầu tiên vào năm 2019, Fender American Ultra là thế hệ tiếp theo của dòng American Elite. </b>
+                    <div class="gia">
+                        <del class="original-price"></del> 
+                        <span class="discounted-price">62.100.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/điện 2.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sanPham">
+                    <div class="ten">Đàn Guitar Điện Fender Mij Fsr-Collection Hydrid Ii Strat Rosewood</div>
+                    <img src="../img/điện 3.jpg" class="img-fluid">
+                    <b class="b1">Series MIJ Hydrid đã là một trong những series nổi tiếng từ trước đến nay, từ chất lượng âm thanh cũng như độ hoàn thiện của cây đàn. Với Hydrid II phiên bản được cải tiến từ Hydrid, chất lượng về âm thanh vẫn được giữ nguyên thêm vào đó hãng sẽ cho chúng ta màu sắc mới và độ hoàn thiện tốt nhất.</b>
+                    <div class="gia">
+                        <del class="original-price">32.070.000</del> 
+                        <span class="discounted-price">25.540.000</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-chi-tiet" data-toggle="modal" data-target="#productModal" data-image="../img/điện 3.jpg">Chi tiết</a>
+                    <button class="btn btn-primary mt-2 addToCart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Chi Tiết Sản Phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-title" id="exampleModalLabel">Chi Tiết Sản Phẩm</h5>
+                    <div class="product-details">
+                        <h5 class="product-name"></h5>
+                        <p class="product-description"></p>
+                        <p class="product-price"></p>
+                    </div>    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary">Thanh toán khi nhận hàng</button>
+                    <button type="button" class="btn btn-primary">Thanh toán bằng ATM</button>
+                    <button type="button" class="btn btn-primary">Trả góp 0%</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Liên hệ</p>
+                    <p>Email: nguyentrieuminh1003@gmail.com</p>
+                    <p>SĐT: 0865089086</p>
+                    <p>Nguyễn Triệu Minh_21103201</p>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackInput" class="form-label">Feedback</label>
+                            <textarea class="form-control" id="feedbackInput" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        $(document).ready(function(){
+            $('#carouselExampleSlidesOnly').carousel({
+                interval: 2000 // Đặt thời gian chuyển slide (đơn vị: milliseconds)
+            });
+        });
+
+        $(document).ready(function(){
+            // Xử lý khi click vào logo để chuyển về trang chủ
+            $(".navbar-brand").click(function(event){
+                event.preventDefault(); // Ngăn chặn hành động mặc định của logo
+                // Chuyển hướng URL về trang chủ và loại bỏ mọi thao tác đang thực hiện trên trang web
+                window.location.replace("../html/index.html");
+            });
+            
+            // Biến đếm số lượng sản phẩm trong giỏ hàng
+            var cartCount = 0;
+            
+            $(document).ready(function(){
+            });
+            
+        });
+        $(document).ready(function(){
+            $(document).ready(function(){
+});
+});
+    </script>
+    <script>
+        $(document).ready(function(){
+            // Xử lý khi click vào nút "Chi tiết" của sản phẩm
+            $(".btn-primary").click(function(event){
+                event.preventDefault(); // Ngăn chặn hành động mặc định của nút
+                // Lấy thông tin sản phẩm từ các phần tử HTML tương ứng
+                var productName = $(this).closest(".sanPham").find(".ten").text(); // Lấy tên sản phẩm
+                var productDescription = $(this).closest(".sanPham").find(".b1").text(); // Lấy mô tả sản phẩm
+                var productPrice = $(this).closest(".sanPham").find(".gia").text(); // Lấy giá sản phẩm
+                // Hiển thị thông tin sản phẩm trong modal
+                $("#productModal .modal-body").html("<h5>" + productName + "</h5><p>" + productDescription + "</p><p>" + productPrice + "</p>");
+                // Hiển thị modal
+                $("#productModal").modal("show");
+            });
+    
+            // Xử lý khi click vào nút "Thêm vào giỏ hàng" của sản phẩm
+            $(".addToCart").click(function(event){
+                event.preventDefault(); // Ngăn chặn hành động mặc định của nút
+                var productName = $(this).closest(".sanPham").find(".ten").text(); // Lấy tên sản phẩm
+                // Thêm sản phẩm vào giỏ hàng
+                addToCart(productName);
+            });
+    
+            // Biến đếm số lượng sản phẩm trong giỏ hàng
+            var cartCount = 0;
+    
+            // Hàm thêm sản phẩm vào giỏ hàng
+            function addToCart(productName){
+                // Tăng biến đếm số lượng sản phẩm
+                cartCount++;
+                // Cập nhật số lượng sản phẩm trong giỏ hàng trên nút "Giỏ hàng"
+                updateCartCount();
+                // Hiển thị thông báo
+                alert("Đã thêm " + productName + " vào giỏ hàng!");
+            }
+    
+            // Hàm cập nhật số lượng sản phẩm trong giỏ hàng
+            function updateCartCount(){
+                // Cập nhật số lượng sản phẩm hiển thị trên nút "Giỏ hàng"
+                $("#cartLink").text("Giỏ hàng (" + cartCount + ")");
+            }
+        });
+
+        $(document).ready(function(){
+    // Xử lý khi click vào nút "Chi tiết" của sản phẩm
+    $(".btn-chi-tiet").click(function(event){
+        event.preventDefault(); // Ngăn chặn hành động mặc định của nút
+
+        // Lấy thông tin sản phẩm từ các phần tử HTML tương ứng
+        var productName = $(this).closest(".sanPham").find(".ten").text(); // Lấy tên sản phẩm
+        var productDescription = $(this).closest(".sanPham").find(".b1").text(); // Lấy mô tả sản phẩm
+        var productPrice = $(this).closest(".sanPham").find(".original-price").text(); // Lấy giá sản phẩm
+        var productPrice = $(this).closest(".sanPham").find(".discounted-price").text(); // Lấy giá sản phẩm
+        var productImage = $(this).data("image"); // Lấy đường dẫn của hình ảnh sản phẩm
+
+        // Hiển thị thông tin sản phẩm và hình ảnh trong modal
+        $("#productModal .modal-body").html("<h5>" + productName + "</h5><img src='" + productImage + "' class='img-fluid'><p>" + productDescription + "</p><p>" + productPrice + "</p>");
+        // Hiển thị modal
+        $("#productModal").modal("show");
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triệu Minh Musical Instruments</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Kết nối file CSS -->
+    <link rel="stylesheet" href="../css/Assignment.css">
+    <style>
+        body {
+            background-color: #292929; /* Màu nền sáng */
+            font-family: Arial, sans-serif; /* Font chữ dễ đọc */
+        }
+
+        .navbar {
+            background-color: #ce3f3f !important; 
+        }
+
+        .navbar-nav .nav-link {
+            color: rgb(255, 255, 255) !important; /* Màu chữ trắng */
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            font-size: 14px; /* Đặt kích thước chữ mong muốn, ví dụ: 14px */
+        }
+
+        footer {
+            background-color: #ce3f3f; /* Màu nền chân trang */
+            color: #fff; /* Màu chữ chân trang */
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.png" height="100px" width="100px" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/index.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            MENU
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item electric" href="#">Guitar Điện</a>
+                            <a class="dropdown-item classic" href="#">Guitar Classic</a>
+                            <a class="dropdown-item acoustic" href="#">Guitar Acoustic</a>
+                            <a class="dropdown-item organ" href="#">Organ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/DangNhap.html">ĐĂNG NHẬP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/Dangky.html">ĐĂNG KÝ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/about.html">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-danger" href="../html/giohang.html" id="cartLink">GIỎ HÀNG (0)</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4">Đăng nhập</h1>
+                        <div class="form-group">
+                            <input class="form-control user" type="text" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control pass" type="password" placeholder="Password">
+                        </div>
+                        <div class="form-group form-check remember">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <a class="for" href="#">Forgot Password?</a><br>
+                        <button class="btn btn-danger btn-block dangnhap" type="submit">Đăng nhập</button>
+                        <hr>
+                        <div class="text-center">
+                            <h4>or</h4>
+                            <button class="btn btn-danger btn-block facebook" type="submit">Facebook</button>
+                            <button class="btn btn-danger btn-block google" type="submit">Google</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Kiểm tra nếu đã có thông tin tài khoản trong Local Storage
+            var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+
+            // Xử lý sự kiện khi click nút Đăng nhập
+        $(".dangnhap").click(function() {
+            var username = $(".user").val();
+            var password = $(".pass").val();
+
+            // Kiểm tra tài khoản có tồn tại trong Local Storage không
+            var account = accounts.find(function(acc) {
+                return acc.username === username && acc.password === password;
+            });
+
+            if (account) {
+                alert("Đăng nhập thành công.");
+                // Lưu thông tin tài khoản đã đăng nhập vào Local Storage
+                localStorage.setItem("loggedInUser", JSON.stringify(account));
+                // Chuyển hướng về trang chủ
+                window.location.replace("index.html");
+            } else {
+                alert("Tài khoản không tồn tại hoặc sai mật khẩu.");
+            }
+        });
+    });
+    </script>
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Liên hệ</p>
+                    <p>Email: nguyentrieuminh1003@gmail.com</p>
+                    <p>SĐT: 0865089086</p>
+                    <p>Nguyễn Triệu Minh_21103201</p>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackInput" class="form-label">Feedback</label>
+                            <textarea class="form-control" id="feedbackInput" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

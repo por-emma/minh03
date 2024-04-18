@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triệu Minh Musical Instruments</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Kết nối file CSS -->
+    <link rel="stylesheet" href="../css/Assignment.css">
+    <style>
+        body {
+            background-color: #292929; /* Màu nền sáng */
+            font-family: Arial, sans-serif; /* Font chữ dễ đọc */
+        }
+
+        .navbar {
+            background-color: #ce3f3f !important; 
+        }
+
+        .navbar-nav .nav-link {
+            color: rgb(255, 255, 255) !important; /* Màu chữ trắng */
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            font-size: 14px; /* Đặt kích thước chữ mong muốn, ví dụ: 14px */
+        }
+
+        footer {
+            background-color: #ce3f3f; /* Màu nền chân trang */
+            color: #fff; /* Màu chữ chân trang */
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.png" height="100px" width="100px" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/index.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            MENU
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item electric" href="#">Guitar Điện</a>
+                            <a class="dropdown-item classic" href="#">Guitar Classic</a>
+                            <a class="dropdown-item acoustic" href="#">Guitar Acoustic</a>
+                            <a class="dropdown-item organ" href="#">Organ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/DangNhap.html">ĐĂNG NHẬP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/Dangky.html">ĐĂNG KÝ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/about.html">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-danger" href="../html/giohang.html" id="cartLink">GIỎ HÀNG (0)</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <article>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="text-center mb-4">Đăng ký</h1>
+                            <div class="form-group">
+                                <input id="username" class="form-control" type="text" placeholder="Username">
+                                <span id="usernameError" class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <input id="email" class="form-control" type="email" placeholder="Email">
+                                <span id="emailError" class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <input id="password" class="form-control" type="password" placeholder="Password">
+                                <span id="passwordError" class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <input id="confirmPassword" class="form-control" type="password" placeholder="Confirm Password">
+                                <span id="confirmPasswordError" class="error-message"></span>
+                            </div>
+                            <button id="registerBtn" class="btn btn-danger btn-block dangky" type="button">Đăng ký</button>
+                            <hr>
+                            <div class="text-center">
+                                <h4>or</h4>
+                                <button class="btn btn-danger btn-block facebook" type="submit">Facebook</button>
+                                <button class="btn btn-danger btn-block google" type="submit">Google</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Liên hệ</p>
+                    <p>Email: nguyentrieuminh1003@gmail.com</p>
+                    <p>SĐT: 0865089086</p>
+                    <p>Nguyễn Triệu Minh_21103201</p>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackInput" class="form-label">Feedback</label>
+                            <textarea class="form-control" id="feedbackInput" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var usernameInput = document.getElementById("username");
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var confirmPasswordInput = document.getElementById("confirmPassword");
+
+            function checkUsername() {
+                var username = usernameInput.value;
+                var usernameRegex = /[A-Z]/;
+                if (!usernameRegex.test(username)) {
+                    document.getElementById("usernameError").textContent = "Username phải có ít nhất 1 kí tự viết hoa.";
+                    return false;
+                } else {
+                    document.getElementById("usernameError").textContent = "";
+                    return true;
+                }
+            }
+
+            function checkEmail() {
+                var email = emailInput.value;
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById("emailError").textContent = "Email không hợp lệ.";
+                    return false;
+                } else {
+                    document.getElementById("emailError").textContent = "";
+                    return true;
+                }
+            }
+
+            function checkPassword() {
+                var password = passwordInput.value;
+                var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+                if (!passwordRegex.test(password)) {
+                    document.getElementById("passwordError").textContent = "Password phải dài ít nhất 8 kí tự và chứa ít nhất 1 chữ số và 1 kí tự đặc biệt.";
+                    return false;
+                } else {
+                    document.getElementById("passwordError").textContent = "";
+                    return true;
+                }
+            }
+
+            function checkConfirmPassword() {
+                var confirmPassword = confirmPasswordInput.value;
+                var password = passwordInput.value;
+                if (confirmPassword !== password) {
+                    document.getElementById("confirmPasswordError").textContent = "Confirm password không khớp.";
+                    return false;
+                } else {
+                    document.getElementById("confirmPasswordError").textContent = "";
+                    return true;
+                }
+            }
+
+            function checkAllConditions() {
+                return checkUsername() && checkEmail() && checkPassword() && checkConfirmPassword();
+            }
+
+            document.getElementById("registerBtn").addEventListener("click", function() {
+                if (checkAllConditions()) {
+                    var username = usernameInput.value;
+                    localStorage.setItem("username", username);
+                    alert("Đã đăng ký thành công.");
+                    window.location.replace("index.html");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
